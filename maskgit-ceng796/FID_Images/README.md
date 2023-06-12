@@ -1,0 +1,1 @@
+Sample images for FID scores come here!
