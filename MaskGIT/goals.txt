@@ -1,0 +1,22 @@
+MaskGIT: Masked Generative Image Transformer
+Link: https://arxiv.org/pdf/2202.04200.pdf
+
+
+Quantitative result: Table 1, ImageNet256x256 part, given FID of MaskGIT (scaled, see below for more information)
+Qualitative result: Figure 7, top row
+
+The benchmarks given are evaluated only on the large ImageNet dataset, which demands significant computational power for training. To mitigate this, we plan to train the model on a subset of the dataset. To fairly evaluate the performance, a scaling factor can be used to adjust the evaluation metrics. This factor can be empirically derived by training models on multiple subsamples and estimating the dataset size-performance relationship. The evaluation metrics are then adjusted using this scaling factor.
+
+
+
+—— version 1 submission ——
+
+The quantitative result goals are updated from class-conditional image synthesis to image inpainting in Table 2, as per the clearer instructions on the implementation. Additionally, we are using ImageNet64 dataset, as per the memory constraints.
+The results are not complete yet, as the model is still being trained, but the loss curves obtained seem promising.
+
+
+
+—— version 2 submission ——
+We switched from ImageNet dataset to ImageNet64 dataset for due to computational constraints.
+We tried to obtain output similar to what we declared in the initial version of this .txt file. However, our qualitative and quantitative results show that our implementation underperformed, when compared to the results shown in the original paper. There are several possible reasons for this level of quality. First, due to computational power constraints, we could not train our model for the reported amount of training epochs (300 epoch). Second, we needed to switch to a lower resolution dataset, which led to information loss. It is clear that these constraints have decreased our model quality.
+Also, we used VQGAN for visual token extraction, and as we used lower resolution dataset, the output of VQGAN was also noisy.
